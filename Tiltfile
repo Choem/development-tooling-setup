@@ -19,15 +19,15 @@ docker_build_with_restart(
 )
 
 # Workflow manager service deployment and live development
-# k8s_yaml(helm('deployments/workflow-manager-service', name='workflow-manager-service'))
+k8s_yaml(helm('deployments/workflow-manager-service', name='workflow-manager-service'))
 
-# docker_build_with_restart(
-#   'choem/workflow-manager-service', 
-#   './services/workflow-manager-service',
-#   entrypoint='/start_app',
-#   target='dev',
-#   dockerfile='./services/workflow-manager-service/Dockerfile',
-#   live_update=[
-#     sync('./services/workflow-manager-service', '/usr/src/app'),
-#   ],
-# )
+docker_build_with_restart(
+  'k3d-dts-registry:5000/workflow-manager-service', 
+  './services/workflow-manager-service',
+  entrypoint='/start_app',
+  target='dev',
+  dockerfile='./services/workflow-manager-service/Dockerfile',
+  live_update=[
+    sync('./services/workflow-manager-service', '/usr/src/app'),
+  ],
+)
