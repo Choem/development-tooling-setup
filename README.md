@@ -30,3 +30,14 @@ cp .env.template .env
 To reach your cluster:
  - port 9080 (HTTP)
  - port 9443 (HTTPS)
+
+Although these are the scripts for starting up a local cluster, below all the scripts are listed.
+
+|  Script                               |  Description  |   
+|---------------------------------------|---------------|
+|  ./scripts/add_registry_to_docker.sh  |  Adds a JSON file which contains the insecure port needed for Docker to push local images to.  |
+|  ./scripts/add_secrets.sh             |  Adds the secrets for your microservices in the cluster.  |
+|  ./scripts/remove_cluster.sh          |  Removes the cluster. |
+|  ./scripts/remove_registry.sh         |  Removes the registry. |
+|  ./scripts/start_cluster.sh           |  Starts the cluster.  |
+|  ./scripts/stop_cluster.sh            |  Stops the cluster.  |
