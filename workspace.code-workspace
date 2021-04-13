@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "services/file-service"
+		},
+		{
+			"path": "services/workflow-manager-service"
+		}
+	],
+	"settings": {}
+}
