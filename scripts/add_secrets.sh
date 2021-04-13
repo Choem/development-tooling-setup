@@ -10,3 +10,5 @@ source ${ROOT_PATH}/scripts/lib/load_env.sh
 kubectl create secret generic minio-secret \
   --from-literal=accesskey=$MINIO_ACCESS_KEY \
   --from-literal=secretkey=$MINIO_SECRET_KEY
+
+# Add more secrets if you add a service...
