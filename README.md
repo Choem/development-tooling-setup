@@ -13,7 +13,7 @@ This is a test for setting up development tooling.
 cp .env.template .env
 ```
 
-3. Create a deamon.json file in /etc/docker/ that enables insecure registries at port 5000.
+1. Create a deamon.json file in /etc/docker/ that enables insecure registries at the REGISTRY_PORT defined in your .env.
 ```
 ./scripts/add_registry_to_docker.sh
 ```
