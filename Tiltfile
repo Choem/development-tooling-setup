@@ -2,13 +2,13 @@
 load('ext://restart_process', 'docker_build_with_restart')
 
 # Only allow the follow context
-allow_k8s_contexts('k3d-argo-workflow-test')
+allow_k8s_contexts('k3d-dts')
 
 # File service deployment and live development
 k8s_yaml(helm('deployments/file-service', name='file-service'))
 
 docker_build_with_restart(
-  'k3d-argo-workflow-test-registry:5000/file-service', 
+  'k3d-dts-registry:5000/file-service', 
   './services/file-service',
   entrypoint='/start_app',
   target='dev',

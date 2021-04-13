@@ -15,7 +15,7 @@ spec:
       containers:
         - name: file-service
           # Replace this with values-dev.yaml
-          image: k3d-argo-workflow-test-registry:5000/file-service
+          image: k3d-dts-registry:5000/file-service
           ports:
             - containerPort: 4000
           env:
