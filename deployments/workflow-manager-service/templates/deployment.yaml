@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workflow-manager-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: workflow-manager-service
+  template:
+    metadata:
+      labels:
+        component: workflow-manager-service
+    spec:
+      containers:
+        - name: workflow-manager-service
+          image: k3d-registry.localhost:5000/workflow-manager-service
+          ports:
+            - containerPort: 4000

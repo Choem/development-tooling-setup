@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: file-service
+  template:
+    metadata:
+      labels:
+        component: file-service
+    spec:
+      containers:
+        - name: file-service
+          # Replace this with values-dev.yaml
+          image: k3d-argo-workflow-test-registry:5000/file-service
+          ports:
+            - containerPort: 4000
+          env:
+            - name: MINIO_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: minio-secret
+                  key: accesskey
+            - name: MINIO_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-secret
+                  key: secretkey
+            - name: MINIO_USE_SSL
+              value: "false"
