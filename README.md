@@ -2,11 +2,11 @@ This is a test for setting up development tooling.
 
 1. What do I have to install for local development?
    - [Docker](https://www.docker.com/)
-   - [Helm] (https://helm.sh/docs/intro/quickstart/)
+   - [Helm](https://helm.sh/docs/intro/quickstart/)
    - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
    - [K3d](https://k3d.io/#installation)
    - [Go](https://golang.org/)
-   - [Telepresence] (https://www.telepresence.io/)
+   - [Telepresence](https://www.telepresence.io/)
 
 2. Copy the .env.template file to an .env file and edit it to your liking.
 ```
