@@ -11,4 +11,9 @@ kubectl create secret generic minio-secret \
   --from-literal=accesskey=$MINIO_ACCESS_KEY \
   --from-literal=secretkey=$MINIO_SECRET_KEY
 
+# MongoDB secret
+kubectl create secret generic mongodb-secret \
+  --from-literal=mongodb-root-password=$MONGODB_ROOT_PASSWORD \
+  --from-literal=mongodb-password=$MONGODB_PASSWORD
+
 # Add more secrets if you add a service...
