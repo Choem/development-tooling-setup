@@ -13,7 +13,7 @@ This is a test for setting up development tooling.
 cp .env.template .env
 ```
 
-1. Create a deamon.json file in /etc/docker/ that enables insecure registries at the REGISTRY_PORT defined in your .env.
+3. Create a deamon.json file in /etc/docker/ that enables insecure registries at the REGISTRY_PORT defined in your .env.
 ```
 ./scripts/add_registry_to_docker.sh
 ```
@@ -31,7 +31,7 @@ To reach your cluster:
  - port 9080 (HTTP)
  - port 9443 (HTTPS)
 
-Although these are the scripts for starting up a local cluster, below all the scripts are listed.
+All the scripts that can be used are listed below and located in the /scripts/ folder.
 
 |  Script                               |  Description  |   
 |---------------------------------------|---------------|
@@ -41,3 +41,5 @@ Although these are the scripts for starting up a local cluster, below all the sc
 |  ./scripts/remove_registry.sh         |  Removes the registry. |
 |  ./scripts/start_cluster.sh           |  Starts the cluster.  |
 |  ./scripts/stop_cluster.sh            |  Stops the cluster.  |
+|  ./scripts/lib/k3d_cluster_status.sh  |  Helper script that gets the current status of the k3d cluster.  |
+|  ./scripts/lib/load_env.sh            |  Loads the .env file as variables in your terminal session.  |
