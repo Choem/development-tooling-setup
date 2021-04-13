@@ -1,14 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": ".",
+			"name": "Root"
 		},
 		{
-			"path": "services/file-service"
+			"path": "services/file-service",
+			"name": "File service"
 		},
 		{
-			"path": "services/workflow-manager-service"
+			"path": "services/workflow-manager-service",
+			"name": "Workflow manager service"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": { "services": true }
+	}
 }
