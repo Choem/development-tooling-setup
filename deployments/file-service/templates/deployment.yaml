@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
         - name: file-service
-          # Replace this with values-dev.yaml
-          image: k3d-dts-registry:5000/file-service
+          image: {{.Values.image}}
           ports:
             - containerPort: 4000
           env:
