@@ -12,7 +12,7 @@ spec:
       labels:
         component: workflow-manager-service
     spec:
-      serviceAccountName: argo-workflow-reader
+      serviceAccountName: ai-workflow-reader
       containers:
         - name: workflow-manager-service
           image: {{.Values.image}}

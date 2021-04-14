@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: cron-hello-world
+spec:
+  schedule: "* * * * *"
+  timezone: "America/Los_Angeles"
+  startingDeadlineSeconds: 0
+  concurrencyPolicy: "Allow"
+  successfulJobsHistoryLimit: 10
+  failedJobsHistoryLimit: 4
+  suspend: false
+  workflowSpec:
+    serviceAccountName: ai-workflow-runner
+    entrypoint: whalesay
+    templates:
+      - name: whalesay
+        container:
+          image: docker/whalesay:latest
+          command: [cowsay]
+          args: ["🕓 hello world. Scheduled on: {{`{{workflow.creationTimestamp}}`}}"]
+        archiveLocation:
+          archiveLogs: true

@@ -7,6 +7,7 @@ This is a test for setting up development tooling.
    - [K3d](https://k3d.io/#installation)
    - [Go](https://golang.org/)
    - [Telepresence](https://www.telepresence.io/)
+   - [Argo] (https://github.com/argoproj/argo-workflows/releases)
 
 2. Copy the .env.template file to an .env file and edit it to your liking.
 ```
